@@ -4,7 +4,7 @@ def load_dataset(filename: str) -> dict:
     with open(filename, 'r') as f:
         for line in f:
             data = line.split()
-            x = tuple(float(attr.replace(',', '.')) for attr in data[:-1])
+            x = tuple(map(to_float, data[:-1]))
             y = data[-1]
 
             dataset[x] = y
