@@ -1,10 +1,10 @@
-from model import Model
+from modelknn import ModelKNN
 from util import to_float
 import config as cfg
 
 k = int(input("Enter k: "))
 
-model = Model(cfg.train, cfg.test)
+model = ModelKNN(cfg.train, cfg.test)
 k = len(model.train_data) if k > len(model.train_data) else abs(k)
 attr_n = len(list(model.train_data.keys())[0])
 

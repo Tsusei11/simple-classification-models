@@ -1,7 +1,7 @@
 from util import *
 
 
-class Model:
+class ModelKNN:
 
     def __init__(self, train_filename: str, test_filename: str):
         self.train_data = load_dataset(train_filename)
@@ -13,18 +13,16 @@ class Model:
         for x in self.train_data:
             dist_dict[x] = calc_dist(vec, x)
 
-        #dist_dict = sorted(dist_dict.items(), key=lambda pair: pair[1])[:self.k]
-        dist_dict = list(sort_dict_by_val(dist_dict).keys())[:k]
+        nearest_neighbours = list(dict(sorted(dist_dict.items(), key=lambda pair: pair[1])).keys())[:k]
 
         count = {}
-        for x in dist_dict:
+        for x in nearest_neighbours:
             if self.train_data[x] in count:
                 count[self.train_data[x]] += 1
             else:
                 count[self.train_data[x]] = 1
 
-        #return max(count, key=count.get)
-        return list(sort_dict_by_val(count).keys())[-1]
+        return max(dict(sorted(count.items())), key=count.get)
 
     def test(self, k: int) -> int:
         count = 0
