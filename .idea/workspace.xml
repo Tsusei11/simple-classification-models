@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41fafa38-a3e9-45d7-8ab3-e6a8b100526b" name="Changes" comment="Updated main, model, util and k-test files. Added config file.">
-      <change afterPath="$PROJECT_DIR$/data/iris_test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/iris_training.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perceptron/perceptron-test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perceptron/perceptron.py" afterDir="false" />
+    <list default="true" id="41fafa38-a3e9-45d7-8ab3-e6a8b100526b" name="Changes" comment="Changed project structure. Added perceptron model.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k-test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/knn/knn-model-test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/knn/modelknn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perceptron/perceptron-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/perceptron/perceptron-test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,21 +24,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Tsusei11"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Tsusei11&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Tsusei11/simple_classification_model.git",
-    "accountId": "da426e35-deb2-4b2c-95e5-a1280d8d27ba"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Tsusei11/simple_classification_model.git&quot;,
+    &quot;accountId&quot;: &quot;da426e35-deb2-4b2c-95e5-a1280d8d27ba&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2uEH7z4b8zhJZIwYAq6TKhb3B9h" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,6 +48,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.k-test.executor": "Run",
+    "Python.knn-model-test.executor": "Run",
     "Python.main.executor": "Run",
     "Python.model.executor": "Run",
     "Python.perceptron-test.executor": "Run",
@@ -70,6 +65,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/perceptron" />
+      <recent name="$PROJECT_DIR$/knn" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -86,7 +87,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741806649883</updated>
-      <workItem from="1741806651144" duration="25530000" />
+      <workItem from="1741806651144" duration="25926000" />
+      <workItem from="1742981591038" duration="683000" />
     </task>
     <task id="LOCAL-00001" summary="Added main, model and util classes">
       <option name="closed" value="true" />
@@ -112,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742383227956</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed project structure. Added perceptron model.">
+      <option name="closed" value="true" />
+      <created>1742746833352</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742746833352</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,13 +132,15 @@
     <MESSAGE value="Added main, model and util classes" />
     <MESSAGE value="Updated main, model and util files. Added k-test." />
     <MESSAGE value="Updated main, model, util and k-test files. Added config file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated main, model, util and k-test files. Added config file." />
+    <MESSAGE value="Changed project structure. Added perceptron model." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed project structure. Added perceptron model." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/simple_classification_model$perceptron_test.coverage" NAME="perceptron-test Coverage Results" MODIFIED="1742746691456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/simple_classification_model$perceptron_test.coverage" NAME="perceptron-test Coverage Results" MODIFIED="1742982069515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/perceptron" />
     <SUITE FILE_PATH="coverage/simple_classification_model$k_test.coverage" NAME="k-test Coverage Results" MODIFIED="1742383164054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/simple_classification_model$model.coverage" NAME="model Coverage Results" MODIFIED="1742419515987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/simple_classification_model$perceptron.coverage" NAME="perceptron Coverage Results" MODIFIED="1742742085839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/simple_classification_model$knn_model_test.coverage" NAME="knn-model-test Coverage Results" MODIFIED="1742981899491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knn" />
     <SUITE FILE_PATH="coverage/simple_classification_model$main.coverage" NAME="main Coverage Results" MODIFIED="1742420285074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/simple_classification_model$util.coverage" NAME="util Coverage Results" MODIFIED="1741889740764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
