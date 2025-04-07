@@ -20,4 +20,4 @@ print(f'Perceptron successfully tested after {epochs} epochs with {correct} corr
 
 while input('Do you want to continue? (y/n): ').lower() == 'y':
     vec = list(map(util.to_float, input(f'Enter {attr_n}-dimensional vector: ').split()[:attr_n]))
-    print(f'Prediction: {cfg.perceptron_decision if perceptron.compute(vec) == 1 else f"Not {cfg.perceptron_decision}"}')
+    print(f'Prediction: {cfg.perceptron_decision if perceptron.compute_output(vec) == 1 else f"Not {cfg.perceptron_decision}"}')

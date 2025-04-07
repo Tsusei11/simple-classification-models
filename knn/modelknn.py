@@ -15,14 +15,7 @@ class ModelKNN:
 
         nearest_neighbours = list(dict(sorted(dist_dict.items(), key=lambda pair: pair[1])).keys())[:k]
 
-        count = {}
-        for x in nearest_neighbours:
-            if self.train_data[x] in count:
-                count[self.train_data[x]] += 1
-            else:
-                count[self.train_data[x]] = 1
-
-        return max(dict(sorted(count.items())), key=count.get)
+        return self.train_data[max(nearest_neighbours, key=nearest_neighbours.count)]
 
     def test(self, k: int) -> int:
         count = 0

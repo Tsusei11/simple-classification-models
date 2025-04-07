@@ -1,4 +1,8 @@
+import collections
+import math
+import os
 import random
+import string
 
 
 def load_dataset(filename: str) -> dict:
@@ -29,3 +33,39 @@ def shuffle_dict(d: dict) -> dict:
         result[keys[rand_index]] = d.pop(keys[rand_index])
 
     return result
+
+def text_to_vec(text: str) -> list[float]:
+    letters = list(filter(lambda x: x in string.ascii_lowercase, text.lower()))
+    counter = collections.Counter(letters)
+    vec = []
+
+    for letter in string.ascii_lowercase:
+        vec.append(counter[letter]/len(letters))
+    return vec
+
+def load_articles(filename: str) -> (list, dict, dict):
+    train_dataset = {}
+    test_dataset = {}
+    names = os.listdir(filename)
+
+    for name in names:
+        filenames = os.listdir(os.path.join(filename, name))
+        for i, file in enumerate(filenames):
+            with open(os.path.join(filename, name, file), 'r') as f:
+                if i < 8:
+                    train_dataset[tuple(text_to_vec(f.read()))] = name
+                else:
+                    test_dataset[tuple(text_to_vec(f.read()))] = name
+
+    return names, train_dataset, test_dataset
+
+def get_vec_length(vec: list):
+    sum = 0
+    for x in vec:
+        sum += x**2
+
+    return math.sqrt(sum)
+
+def get_normal_vec(vec: list) -> list:
+    length = get_vec_length(vec)
+    return list(map(lambda x: x/length, vec))
