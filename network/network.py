@@ -10,21 +10,22 @@ class Network:
     def add_perceptron_list(self, perceptron: list[Perceptron]):
         self.layer.extend(perceptron)
 
-    def train_layer(self, train_set, test_set):
+    def train_layer(self, train_set, test_set) -> dict[str, float]:
+        accuracies = {}
         for perceptron in self.layer:
             epoch = 1
             while perceptron.test(test_set) / len(test_set) < self.min_accuracy and epoch < self.max_epochs:
                 perceptron.learn(train_set)
                 epoch += 1
 
-            if epoch == self.max_epochs:
-                print('Reached max epochs')
+            accuracies[perceptron.desired] = perceptron.test(test_set) / len(test_set)
+
+        return accuracies
 
     def predict(self, text: str):
         vec = util.text_to_vec(text)
         answer = {}
         for perceptron in self.layer:
-            print(f'{perceptron.desired}: {perceptron.compute_output(vec)}')
             if perceptron.compute_output(vec) == 1:
                 answer[perceptron.desired] = perceptron.compute_net(vec)
 

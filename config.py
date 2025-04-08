@@ -2,6 +2,7 @@ train = '../data/iris_training.txt'
 test = '../data/iris_test.txt'
 perceptron_decision = 'Iris-setosa'
 articles = '../data/articles/'
+articles_test = '../data/articles-test/'
 
 letters_alt = {
   'ę': 'e',

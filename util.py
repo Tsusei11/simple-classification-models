@@ -4,6 +4,8 @@ import os
 import random
 import string
 
+import config as cfg
+
 
 def load_dataset(filename: str) -> dict:
     dataset = {}
@@ -34,8 +36,14 @@ def shuffle_dict(d: dict) -> dict:
 
     return result
 
+def validate_letter(letter: str) -> bool:
+    if letter in cfg.letters_alt.keys():
+        letter = cfg.letters_alt[letter]
+
+    return letter in string.ascii_lowercase
+
 def text_to_vec(text: str) -> list[float]:
-    letters = list(filter(lambda x: x in string.ascii_lowercase, text.lower()))
+    letters = list(filter(lambda x: validate_letter(x), text.lower()))
     counter = collections.Counter(letters)
     vec = []
 
@@ -43,21 +51,16 @@ def text_to_vec(text: str) -> list[float]:
         vec.append(counter[letter]/len(letters))
     return vec
 
-def load_articles(filename: str) -> (list, dict, dict):
-    train_dataset = {}
-    test_dataset = {}
+def load_articles(filename: str, return_names: bool = False):
+    dataset = {}
     names = os.listdir(filename)
-
     for name in names:
         filenames = os.listdir(os.path.join(filename, name))
         for i, file in enumerate(filenames):
             with open(os.path.join(filename, name, file), 'r') as f:
-                if i < 8:
-                    train_dataset[tuple(text_to_vec(f.read()))] = name
-                else:
-                    test_dataset[tuple(text_to_vec(f.read()))] = name
+                dataset[tuple(text_to_vec(f.read()))] = name
 
-    return names, train_dataset, test_dataset
+    return dataset if not return_names else (names, dataset)
 
 def get_vec_length(vec: list):
     sum = 0
