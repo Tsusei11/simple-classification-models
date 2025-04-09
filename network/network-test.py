@@ -17,7 +17,7 @@ for lang in langs:
 network.add_perceptron_list(perceptrones)
 accuracies = network.train_layer(train_dataset, test_dataset)
 
-print('Network trained.')
+print('Network trained and tested.')
 mean = 0
 for lang, acc in accuracies.items():
     print(f'{lang} perceptron accuracy = {acc * 100:.2f}%')
