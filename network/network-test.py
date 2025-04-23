@@ -8,7 +8,9 @@ from perceptron.perceptron import Perceptron
 network = Network(100, 1)
 
 langs, train_dataset = util.load_articles(cfg.articles, True)
-test_dataset = util.load_articles(cfg.articles_test, False)
+test_dataset = util.load_articles(cfg.articles_test)
+train_dataset = util.shuffle_dict(train_dataset)
+test_dataset = util.shuffle_dict(test_dataset)
 perceptrones = []
 for lang in langs:
     random_weights = [random.random() for _ in range(len(list(train_dataset.keys())[0]))]

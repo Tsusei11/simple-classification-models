@@ -72,3 +72,87 @@ def get_vec_length(vec: list):
 def get_normal_vec(vec: list) -> list:
     length = get_vec_length(vec)
     return list(map(lambda x: x/length, vec))
+
+def categorize_vec(vec: list, categories: tuple) -> dict:
+    sorted_vec = sorted(vec)
+    step = len(sorted_vec)/len(categories)
+
+    counter = 0
+    current_category = categories[0]
+    ranges = {current_category: [0]}
+    for i, num in enumerate(sorted_vec):
+        if counter == step:
+            ranges[current_category].append(sorted_vec[i-1])
+            current_category = categories[categories.index(current_category)+1]
+            ranges[current_category] = [sorted_vec[i-1]]
+            counter = 0
+
+        vec[vec.index(num)] = current_category
+        counter += 1
+    ranges[current_category].append(math.inf)
+    return ranges
+
+def get_categorized_vec(vec: list, ranges: dict) -> None:
+    for i, num in enumerate(vec):
+        for category in ranges:
+            if ranges[category][0] < num <= ranges[category][1]:
+                vec[i] = category
+                break
+
+def get_categorized_attr(attr: list, ranges: list) -> None:
+    for i, range_list in enumerate(ranges):
+        for category in range_list:
+            if range_list[category][0] < attr[i] <= range_list[category][1]:
+                attr[i] = category
+                break
+
+def categorize_dataset(dataset: dict, categories: tuple) -> (dict, list):
+    result = {}
+    ranges = []
+
+    attributes = get_attributes_vectors(dataset)
+    for attr in attributes:
+        ranges.append(categorize_vec(attr, categories))
+
+    for col, v in enumerate(dataset.values()):
+        attr_row = tuple([attributes[row][col] for row in range(len(attributes))])
+        result[attr_row] = v
+
+    return result, ranges
+
+def get_categorized_dataset(dataset: dict, ranges: list) -> dict:
+    result = {}
+
+    attributes = get_attributes_vectors(dataset)
+    for i, attr in enumerate(attributes):
+        get_categorized_vec(attr, ranges[i])
+
+    for col, v in enumerate(dataset.values()):
+        attr_row = tuple([attributes[row][col] for row in range(len(attributes))])
+        result[attr_row] = v
+
+    return result
+
+def get_attributes_vectors(dataset: dict) -> list:
+    attributes_n = len(list(dataset.keys())[0])
+    attributes = []
+
+    for n in range(attributes_n):
+        attributes.append([])
+
+    for i, attr in enumerate(attributes):
+        for k in dataset.keys():
+            attr.append(k[i])
+
+    return attributes
+
+def draw_confusion_matrix(matrix: dict) -> None:
+    print('\t\t\t\t\t', end='')
+    for i in matrix.keys():
+        print(i + ' (T)', end='\t')
+    print()
+    for i in matrix.keys():
+        row = i + ' (P)' + '\t\t\t'
+        for j in matrix[i].keys():
+            row = row + str(matrix[i][j]) + '\t\t\t\t'
+        print(row)
