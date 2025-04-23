@@ -92,20 +92,6 @@ def categorize_vec(vec: list, categories: tuple) -> dict:
     ranges[current_category].append(math.inf)
     return ranges
 
-def get_categorized_vec(vec: list, ranges: dict) -> None:
-    for i, num in enumerate(vec):
-        for category in ranges:
-            if ranges[category][0] < num <= ranges[category][1]:
-                vec[i] = category
-                break
-
-def get_categorized_attr(attr: list, ranges: list) -> None:
-    for i, range_list in enumerate(ranges):
-        for category in range_list:
-            if range_list[category][0] < attr[i] <= range_list[category][1]:
-                attr[i] = category
-                break
-
 def categorize_dataset(dataset: dict, categories: tuple) -> (dict, list):
     result = {}
     ranges = []
@@ -119,6 +105,20 @@ def categorize_dataset(dataset: dict, categories: tuple) -> (dict, list):
         result[attr_row] = v
 
     return result, ranges
+
+def get_categorized_vec(vec: list, ranges: dict) -> None:
+    for i, num in enumerate(vec):
+        for category in ranges:
+            if ranges[category][0] < num <= ranges[category][1]:
+                vec[i] = category
+                break
+
+def get_categorized_attr(attr: list, ranges: list) -> None:
+    for i, range_list in enumerate(ranges):
+        for category in range_list:
+            if range_list[category][0] < attr[i] <= range_list[category][1]:
+                attr[i] = category
+                break
 
 def get_categorized_dataset(dataset: dict, ranges: list) -> dict:
     result = {}
@@ -156,3 +156,7 @@ def draw_confusion_matrix(matrix: dict) -> None:
         for j in matrix[i].keys():
             row = row + str(matrix[i][j]) + '\t\t\t\t'
         print(row)
+
+def smooth(to_smooth: dict, freq_sum: int, distinct_n: int) -> None:
+    for category in to_smooth:
+        to_smooth[category] = (to_smooth[category] * 100 + 1) / (100 + freq_sum + distinct_n)

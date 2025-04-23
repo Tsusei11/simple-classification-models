@@ -23,6 +23,8 @@ class Classifier:
                 categories = set(attr)
                 attr_counter = Counter([attr[j] for j in range(len(attr)) if list(train_dataset.items())[j][1] == target])
                 counter_sum = sum(attr_counter.values())
+                distinct_n = len(categories)
+
                 for category in attr_counter.keys():
                     attr_counter[category] = attr_counter[category] / counter_sum
 
@@ -30,10 +32,14 @@ class Classifier:
                 for category in categories:
                     if category not in attr_counter:
                         before = attr_counter.copy() if before is None else before
-                        attr_counter[category] = 1 / (counter_sum + len(categories))
+                        attr_counter[category] = 1 / (counter_sum + distinct_n)
 
                 if before is not None:
                     print(f'Before smoothing: {before}')
+                    util.smooth(before, counter_sum, distinct_n)
+                    for category in attr_counter.keys():
+                        if category in before:
+                            attr_counter[category] = before[category]
                     print(f'After smoothing: {attr_counter}\n')
 
                 self.probs[target].append(attr_counter)

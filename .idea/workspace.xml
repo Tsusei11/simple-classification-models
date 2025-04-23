@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41fafa38-a3e9-45d7-8ab3-e6a8b100526b" name="Changes" comment="Changed network-test.py">
-      <change afterPath="$PROJECT_DIR$/naive-bayes/bayes-test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/naive-bayes/classifier.py" afterDir="false" />
+    <list default="true" id="41fafa38-a3e9-45d7-8ab3-e6a8b100526b" name="Changes" comment="Add naive bayes classifier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/network-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/network-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive-bayes/classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/naive-bayes/classifier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +91,7 @@
       <updated>1741806649883</updated>
       <workItem from="1741806651144" duration="25926000" />
       <workItem from="1742981591038" duration="16161000" />
-      <workItem from="1745143787724" duration="12337000" />
+      <workItem from="1745143787724" duration="14499000" />
     </task>
     <task id="LOCAL-00001" summary="Added main, model and util classes">
       <option name="closed" value="true" />
@@ -159,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744177487259</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add naive bayes classifier">
+      <option name="closed" value="true" />
+      <created>1745391565405</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745391565405</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,14 +180,15 @@
     <MESSAGE value="Add network.py and network-test.py" />
     <MESSAGE value="Changed network-test.py and network.py" />
     <MESSAGE value="Changed network-test.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed network-test.py" />
+    <MESSAGE value="Add naive bayes classifier" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add naive bayes classifier" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/simple_classification_model$perceptron_test.coverage" NAME="perceptron-test Coverage Results" MODIFIED="1742982509200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/perceptron" />
     <SUITE FILE_PATH="coverage/simple_classification_model$k_test.coverage" NAME="k-test Coverage Results" MODIFIED="1742383164054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/simple_classification_model$model.coverage" NAME="model Coverage Results" MODIFIED="1742419515987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/simple_classification_model$perceptron.coverage" NAME="perceptron Coverage Results" MODIFIED="1742742085839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/simple_classification_model$bayes_test.coverage" NAME="bayes-test Coverage Results" MODIFIED="1745239766475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/naive-bayes" />
+    <SUITE FILE_PATH="coverage/simple_classification_model$bayes_test.coverage" NAME="bayes-test Coverage Results" MODIFIED="1745394436385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/naive-bayes" />
     <SUITE FILE_PATH="coverage/simple_classification_model$knn_model_test.coverage" NAME="knn-model-test Coverage Results" MODIFIED="1743869433888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knn" />
     <SUITE FILE_PATH="coverage/simple_classification_model$main.coverage" NAME="main Coverage Results" MODIFIED="1742420285074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/simple_classification_model$network_test.coverage" NAME="network-test Coverage Results" MODIFIED="1744210402167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/network" />
